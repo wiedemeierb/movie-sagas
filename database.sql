@@ -17,6 +17,19 @@ CREATE TABLE "genres" (
 -- This table will need to be populated with some data as well (INSERTS)
 -- Recall that this Junction Table will just be a table of ids!
 
+CREATE TABLE "movies_genres"(
+	"id" SERIAL PRIMARY KEY,
+	"movies_id" INT REFERENCES "movies",
+	"genres_id" INT REFERENCES "genres"
+);
+
+INSERT INTO "movies_genres" ("movies_id", "genres_id")
+VALUES (1,1), (1,2), (1,8), (1,11), (2,2), (2,9), (2,10), (3,1), (3,7), (3,13),
+ (4,2), (4,4), (5,6), (5,10), (6,1), (6,2), (6,8), (6,13), (7,1), (7,7), (7,13),
+  (8,1), (8,2), (8,7), (9,2), (9,4), (9,8), (9,13), (10, 1), (10, 7), (10, 11),
+   (11, 1), (11, 5), (11, 7), (11, 11), (12, 3), (12, 6), (12, 11), (13, 1), (13, 3),
+    (13, 5), (13, 6), (13, 10), (14, 1), (14, 2), (14, 4), (14, 8), (14, 13);
+
 
 
 --------[ DATA! ]---------
@@ -42,16 +55,16 @@ VALUES
 -- starter genres
 INSERT INTO "genres" ("name")
 VALUES 
-('Adventure'),
-('Animated'),
-('Biographical'),
-('Comedy'),
-('Disaster'),
-('Drama'),
-('Epic'),
-('Fantasy'),
-('Musical'),
-('Romantic'),
-('Science Fiction'),
-('Space-Opera'),
-('Superhero');
+('Adventure'),1
+('Animated'),2
+('Biographical'),3
+('Comedy'),4
+('Disaster'),5
+('Drama'),6
+('Epic'),7
+('Fantasy'),8
+('Musical'),9
+('Romantic'),10
+('Science Fiction'),11
+('Space-Opera'),12
+('Superhero');13
