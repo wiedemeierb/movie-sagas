@@ -22,6 +22,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {this.props.reduxStore.moviesReducer.map(movie => {
+          return (
+            <div>
+              <p>{movie.title}</p>
+              <img src={movie.poster} />
+              <p>{movie.description}</p>
+            </div>
+          )
+        })}
         <p>Empty Page</p>
       </div>
     );
