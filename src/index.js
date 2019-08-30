@@ -13,7 +13,7 @@ import {takeEvery, put} from 'redux-saga/effects';
 import axios from 'axios';
 
 
-function* getMovies(action) {
+function* getMovies() {
     try{
         //GRABS MOVIES DATA FROM DATABASE
         let response = yield axios.get(`/movies`)
