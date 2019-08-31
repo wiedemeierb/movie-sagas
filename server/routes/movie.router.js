@@ -17,12 +17,12 @@ router.get('/', (req, res) => {
 })
 //PULLING DETAILS INFO FROM SAGA_MOVIES_WEEKEND MOVIE
 router.get('/details/:id', (req, res) => {
-    console.log('in movies.router:', req.body);
+    // console.log('in movies.router:', req.body);
     let detailsId = req.params.id
     let queryText = 'SELECT * FROM "movies" WHERE "id" = $1;';
-    pool.query(queryText, [req.body, detailsId])
+    pool.query(queryText, [detailsId])
         .then(result => {
-            res.send(result.rows);
+            res.send(result.rows[0]);
         })
         .catch(error => {
             console.log("Error in movies.router GET", error)

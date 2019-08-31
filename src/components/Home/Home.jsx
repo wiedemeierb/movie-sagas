@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { actionChannel } from 'redux-saga/effects';
 
 class Home extends Component {
     // Renders the entire app on the DOM
@@ -16,6 +17,17 @@ class Home extends Component {
         console.log('get movies dispatch working')
     }
 
+    handleClick = (id) => {
+      console.log('handleClick operational:')
+      //DISPATCH TO REDUCERS
+      this.props.dispatch({
+        type: 'GET_DETAILS',
+        payload: id
+      })
+      console.log('get details dispatch working')
+      this.props.history.push('/details');
+    }
+
     render() {
     return (
       <div className="App">
@@ -23,7 +35,7 @@ class Home extends Component {
           return (
             <div key={movie.id}>
               <p>{movie.title}</p>
-              <img src={movie.poster} alt="movie poster" />
+              <img src={movie.poster} alt="movie poster" onClick={()=>this.handleClick(movie.id)}/>
               <p>{movie.description}</p>
             </div>
           )
