@@ -68,3 +68,9 @@ VALUES
 ('Science Fiction'),11
 ('Space-Opera'),12
 ('Superhero');13
+
+SELECT "movies".id, "movies".title, array_agg("genres".name) AS "movie_genres", "movies".description FROM "movies"
+JOIN "movies_genres" ON "movies_genres".movies_id = "movies".id
+JOIN "genres" ON "genres".id = "movies_genres".genres_id
+WHERE "movies".id = 2
+GROUP BY "movies".id

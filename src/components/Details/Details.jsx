@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 class Details extends Component {
 
     handleClickBack = () => {
-        console.log('handleClick Back To List')
+        // console.log('handleClick Back To List')
         this.props.history.push('/');
     }
 
     handleClickEdit = () => {
-        console.log('handleClick to Edit Page')
+        // console.log('handleClick to Edit Page')
         this.props.history.push('/edit');
     }
     
