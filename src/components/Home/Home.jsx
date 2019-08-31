@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { actionChannel } from 'redux-saga/effects';
+
 
 class Home extends Component {
     // Renders the entire app on the DOM
