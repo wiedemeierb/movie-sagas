@@ -20,6 +20,7 @@ class Details extends Component {
             <p>{this.props.reduxStore.detailsReducer.title}</p>
             <img src={this.props.reduxStore.detailsReducer.poster} alt='movie poster' />
             <p>{this.props.reduxStore.detailsReducer.description}</p>
+            <p>{this.props.reduxStore.genresReducer.genres}</p>
             <button onClick={this.handleClickBack}>Back To List</button>
             <button onClick={this.handleClickEdit}>Edit Description</button>
         
