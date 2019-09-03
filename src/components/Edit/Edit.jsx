@@ -16,8 +16,11 @@ class Edit extends Component {
     render() {
         return (
             <>
-            <h2>Edit Page</h2>
-            <input />
+            <h3>Edit Movie Name</h3>
+            <input placeholder="Edit Movie Name"/>
+            <h3>Edit Movie Description</h3>
+            <input placeholder="Edit Movie Description"/>
+            <br />
             <button onClick={this.handleClickCancel}>Cancel</button>
             <button onClick={this.handleClickSave}>Save</button>
             </>
