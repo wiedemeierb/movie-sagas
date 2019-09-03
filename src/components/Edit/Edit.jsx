@@ -10,7 +10,7 @@ class Edit extends Component {
 
     handleClickSave = (id) => {
         console.log('handleClickSave is working')
-        this.props.history.push('/');
+        this.props.history.push('/details');
     }
 
     render() {
